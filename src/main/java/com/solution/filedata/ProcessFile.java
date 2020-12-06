@@ -16,7 +16,7 @@ public class ProcessFile {
     public static void main(String args[]) {
         ProcessFile processOp = new ProcessFile();
 
-        try(BufferedReader reader = Files.newBufferedReader(Paths.get("src/main/resources/itcont.txt"))){
+        try(BufferedReader reader = Files.newBufferedReader(Paths.get("src/main/resources/dataFile.txt"))){
 
             Supplier<Stream<String>> supplier = () -> reader.lines();
 
