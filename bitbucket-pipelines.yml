@@ -1,0 +1,11 @@
+pipelines:
+  default:
+    - step:
+        name: Sync GitHub Mirror
+        image: alpine/git:latest
+        clone:
+          enabled: false
+        script:
+          - git clone --bare git@bitbucket.org:vkarkhanis/app-process-large-file.git
+          - cd app-process-large-file.git
+          - git push --mirror git@github.com:vkarkhanis/app-process-large-file.git
